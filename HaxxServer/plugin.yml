@@ -1,0 +1,14 @@
+name: Haxx
+version: 1.0
+description: Haxx Server Backend
+author: EssexIO
+ 
+main: me.Haxx.HaxxServer.Main
+ 
+commands:
+  pl:
+    description: List Plugins (Deny)
+  plugins:
+    description: List Plugins (Deny)
+  ?:
+    description: List Plugins (Deny)
