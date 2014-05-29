@@ -1,8 +1,7 @@
-name: Haxx
+name: HaxxServer
 version: 1.0
 description: Haxx Server Backend
 author: EssexIO
- 
 main: me.Haxx.HaxxServer.Main
  
 commands:
