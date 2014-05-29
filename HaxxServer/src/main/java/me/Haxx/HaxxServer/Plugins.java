@@ -10,11 +10,11 @@ public class Plugins implements CommandExecutor {
 		if (cmd.getName().equalsIgnoreCase("pl")
 				|| cmd.getName().equalsIgnoreCase("plugins")
 				|| cmd.getName().equalsIgnoreCase("?")) {
-			if(!sender.isOp()){
+			if (!sender.isOp()) {
 				sender.sendMessage("§b[§eHaxx§b] §7Most of our plugins are custom made or modified. If you have a question about a plugin, ask a staff member!");
 			}
 		}
 		return false;
-		
+
 	}
 }

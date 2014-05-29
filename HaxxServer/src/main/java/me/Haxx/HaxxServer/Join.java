@@ -23,25 +23,23 @@ public class Join implements Listener {
 					+ " §7is new to the server! Say Hi!");
 			p.sendMessage("§7Welcome to the §oHaxx Survival Server!");
 		} else {
-			e.setJoinMessage("§7§l" + p.getName() + " §7has joined the game.");
+			e.setJoinMessage("§6[§a+§6] §r" + p.getName());
 		}
 	}
 
 	public void giveStarterKit(Player p) {
-		if(!p.hasPlayedBefore()) {
-		ItemStack[] items = {
-				new ItemStack(Material.IRON_SWORD),
-				new ItemStack(Material.IRON_PICKAXE),
-				new ItemStack(Material.IRON_SPADE),
-				new ItemStack(Material.COOKED_BEEF, 10),
-				new ItemStack(Material.WOOD, 20)};
-		p.getInventory().addItem(items);
-		ItemStack[] armor = {
-				new ItemStack(Material.IRON_HELMET),
-				new ItemStack(Material.IRON_CHESTPLATE),
-				new ItemStack(Material.IRON_LEGGINGS),
-				new ItemStack(Material.IRON_BOOTS)};
-		p.getInventory().setArmorContents(armor);
+		if (!p.hasPlayedBefore()) {
+			ItemStack[] items = { new ItemStack(Material.IRON_SWORD),
+					new ItemStack(Material.IRON_PICKAXE),
+					new ItemStack(Material.IRON_SPADE),
+					new ItemStack(Material.COOKED_BEEF, 10),
+					new ItemStack(Material.WOOD, 20) };
+			p.getInventory().addItem(items);
+			ItemStack[] armor = { new ItemStack(Material.IRON_HELMET),
+					new ItemStack(Material.IRON_CHESTPLATE),
+					new ItemStack(Material.IRON_LEGGINGS),
+					new ItemStack(Material.IRON_BOOTS) };
+			p.getInventory().setArmorContents(armor);
 		}
 	}
 

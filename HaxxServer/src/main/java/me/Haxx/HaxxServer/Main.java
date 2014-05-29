@@ -8,7 +8,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import me.Haxx.HaxxServer.Join;
 
 public class Main extends JavaPlugin {
-	
+
 	private static Plugin plugin;
 
 	public static Plugin getPlugin() {
@@ -22,7 +22,7 @@ public class Main extends JavaPlugin {
 					.registerEvents(listener, plugin);
 		}
 	}
-	
+
 	@Override
 	public void onDisable() {
 
