@@ -1,13 +1,10 @@
 name: HaxxServer
-version: 1.0
+version: 1.1
 description: Haxx Server Backend
 author: EssexIO
 main: me.Haxx.HaxxServer.Main
  
-commands:
-  pl:
-    description: List Plugins (Deny)
-  plugins:
-    description: List Plugins (Deny)
-  ?:
-    description: List Plugins (Deny)
+permissions:
+    bcolors.use:
+        description: Allows player to see plugin list.
+        default: op

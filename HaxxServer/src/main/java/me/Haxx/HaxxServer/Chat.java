@@ -19,7 +19,7 @@ public class Chat implements Listener {
 	
 	@EventHandler
 	public void onBukkitCommand(PlayerCommandPreprocessEvent e) {
-		if (e.getMessage().startsWith("/bukkit:")) {
+		if (e.getMessage().startsWith("/bukkit:") || e.getMessage().startsWith("/pl") || e.getMessage().startsWith("/?")) {
 			if (!e.getPlayer().isOp()) {
 				e.setCancelled(true);
 				e.getPlayer()

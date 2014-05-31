@@ -11,6 +11,6 @@ public class Leave implements Listener {
 	public void sendWelcome(PlayerQuitEvent e) {
 		Player p = e.getPlayer();
 
-		e.setQuitMessage("§6[§c-§6] §r" + p.getName());
+		e.setQuitMessage("§8[§c-§8] §7" + p.getName());
 	}
 }

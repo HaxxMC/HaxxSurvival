@@ -31,8 +31,5 @@ public class Main extends JavaPlugin {
 	@Override
 	public void onEnable() {
 		registerEvents(this, new Join(), new Leave(), new Chat());
-		getCommand("?").setExecutor(new Plugins());
-		getCommand("pl").setExecutor(new Plugins());
-		getCommand("plugins").setExecutor(new Plugins());
 	}
 }
