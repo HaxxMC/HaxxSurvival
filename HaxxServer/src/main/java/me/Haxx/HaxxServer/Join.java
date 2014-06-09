@@ -1,5 +1,6 @@
 package me.Haxx.HaxxServer;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -22,8 +23,20 @@ public class Join implements Listener {
 			e.setJoinMessage("§c§l" + p.getName()
 					+ " §7is new to the server! Say Hi!");
 			p.sendMessage("§7Welcome to the §oHaxx Survival Server!");
+			for(Player targetPlayers : Bukkit.getOnlinePlayers())
+            {
+				if(targetPlayers.hasPermission("Haxx.welcome")) {
+					targetPlayers.chat("§rWelcome to §cHaxx Survival§r, " + p.getName() + ".");
+				}
+            }
 		} else {
 			e.setJoinMessage("§8[§a+§8] §7" + p.getName());
+			for(Player targetPlayers : Bukkit.getOnlinePlayers())
+            {
+				if(targetPlayers.hasPermission("Haxx.welcome")) {
+					targetPlayers.chat("§rWelcome back,§r " + p.getName() + ".");
+				}
+            }
 		}
 	}
 

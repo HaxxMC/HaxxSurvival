@@ -14,7 +14,17 @@ public class Chat implements Listener {
 	public void onChat(AsyncPlayerChatEvent e) {
 		Player p = e.getPlayer();
 		String prefix = PermissionsEx.getUser(p).getPrefix();
-		e.setFormat(prefix.replace("&", "§") + " §3" + p.getName() + " §7> §f" + e.getMessage());
+		if(e.getMessage().contains("staff") || e.getMessage().contains("op")) {
+			if(e.getMessage().contains("apply") || e.getMessage().contains("can i have") || e.getMessage().contains("i have")) {
+				e.setCancelled(true);
+				p.sendMessage("§4§lDo not ask for staff on the server. §rInstead, read our rules, and then apply on the forum after being a server member for five days. :)");
+			}
+		}
+		if(p.hasPermission("haxx.color")) {
+			e.setFormat(prefix.replace("&", "§") + " §3" + p.getName() + "§8: §7" + e.getMessage().replace("%", "%%").replace("&", "§"));
+		} else {
+			e.setFormat(prefix.replace("&", "§") + " §3" + p.getName() + "§8: §7" + e.getMessage().replace("%", "%%"));
+		}	
 	}
 	
 	@EventHandler
