@@ -13,7 +13,7 @@ public class Chat implements Listener {
 	@EventHandler
 	public void onBukkitCommand(PlayerCommandPreprocessEvent e) {
 		if (e.getMessage().startsWith("/bukkit:")
-				|| e.getMessage().startsWith("/pl")
+				|| e.getMessage().equals("/pl")
 				|| e.getMessage().startsWith("/?")) {
 			if (!e.getPlayer().isOp()) {
 				e.setCancelled(true);
@@ -37,11 +37,11 @@ public class Chat implements Listener {
 			}
 		}
 		if (p.hasPermission("haxx.color")) {
-			e.setFormat(prefix.replace("&", "§") + " §3" + p.getName()
+			e.setFormat(prefix.replace("&", "§") + " §3" + p.getDisplayName()
 					+ "§8: §7"
 					+ e.getMessage().replace("%", "%%").replace("&", "§"));
 		} else {
-			e.setFormat(prefix.replace("&", "§") + " §3" + p.getName()
+			e.setFormat(prefix.replace("&", "§") + " §3" + p.getDisplayName()
 					+ "§8: §7" + e.getMessage().replace("%", "%%"));
 		}
 	}
