@@ -14,6 +14,7 @@ public class Chat implements Listener {
 	public void onBukkitCommand(PlayerCommandPreprocessEvent e) {
 		if (e.getMessage().startsWith("/bukkit:")
 				|| e.getMessage().equals("/pl")
+				|| e.getMessage().startsWith("/plugins")
 				|| e.getMessage().startsWith("/?")) {
 			if (!e.getPlayer().isOp()) {
 				e.setCancelled(true);
@@ -28,12 +29,14 @@ public class Chat implements Listener {
 	public void onChat(AsyncPlayerChatEvent e) {
 		Player p = e.getPlayer();
 		String prefix = PermissionsEx.getUser(p).getPrefix();
-		if (e.getMessage().contains("staff") || e.getMessage().contains("op")) {
-			if (e.getMessage().contains("apply")
-					|| e.getMessage().contains("can i have")
-					|| e.getMessage().contains("i have")) {
+		String msg = e.getMessage().toLowerCase();
+		
+		if (msg.contains("staff") || msg.contains("op")) {
+			if (msg.contains("apply")
+					|| msg.contains("can i have")
+					|| msg.contains("i have")) {
 				e.setCancelled(true);
-				p.sendMessage("§4§lDo not ask for staff on the server. §rInstead, read our rules, and then apply on the forum after being a server member for five days. :)");
+				p.sendMessage("§c§lDo not ask for staff on the server. §7§lInstead, read our rules, and then apply on the forum after being a server member for five days.");
 			}
 		}
 		if (p.hasPermission("haxx.color")) {
